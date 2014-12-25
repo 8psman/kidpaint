@@ -94,7 +94,7 @@ public class Painter extends View {
                 new Runnable() {
                     @Override
                     public void run() {
-                        ((com.namnv.project.kidpaint.Paint)getContext()).onSharePaint(paintHolder.bitmap);
+                        ((com.namnv.project.kidpaint.Paint)getContext()).onSharePaint(paintHolder.getFilePath());
                     }
                 },
                 // on new paint
@@ -143,6 +143,7 @@ public class Painter extends View {
             }
         }).show();
     }
+
     /**
      * start of paint tool's area ------------------------------------------------------------------
      */
@@ -170,20 +171,6 @@ public class Painter extends View {
     @Override
     protected void onSizeChanged(int xNew, int yNew, int xOld, int yOld){
         super.onSizeChanged(xNew, yNew, xOld, yOld);
-//        float xRatio = (float)xNew / paintHolder.width;
-//        float yRatio = (float)yNew / paintHolder.height;
-//        float ratio = Math.min(xRatio, yRatio);
-//        if (ratio < 1){
-//            zoomUtil.getMatrix().setScale(ratio, ratio, 0, 0);
-//            float translateX = (xNew/2f - (paintHolder.width * ratio)/2f) / ratio;
-//            float translateY = (yNew/2f - (paintHolder.height* ratio)/2f) / ratio;
-//            zoomUtil.getMatrix().postTranslate(translateX, translateY);
-//        }else{
-//            float translateX = xNew/2f - (paintHolder.width)/2f;
-//            float translateY = yNew/2f - (paintHolder.height)/2f;
-//            zoomUtil.getMatrix().setTranslate(translateX, translateY);
-//        }
-//        invalidate();
     }
 
     public OnTouchListener zoomListener = new OnTouchListener() {

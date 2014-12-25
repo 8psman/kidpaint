@@ -3,7 +3,6 @@ package com.namnv.project.kidpaint.task;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
-import com.namnv.project.kidpaint.Application;
 import com.namnv.project.kidpaint.object.PaintHolder;
 
 import java.io.File;
@@ -26,14 +25,7 @@ public class PaintSavingAsyncTask extends AsyncTask<Void, Void, Boolean>{
 
     @Override
     protected Boolean doInBackground(Void... voids) {
-        String directory = Application.getLocalPaintDirectory();
-        String fileName = holder.name.toLowerCase();
-        int index = holder.name.lastIndexOf(".jpg");
-        if (index < 0) index = holder.name.lastIndexOf(".png");
-        if (index < 0){
-            fileName = fileName + Application.getInstance().getCurrentPaintExtension();
-        }
-        File file = new File(directory, fileName);
+        File file = new File(holder.getFilePath());
         try {
             FileOutputStream outputStream = new FileOutputStream(file);
             holder.bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);

@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import com.namnv.project.kidpaint.Application;
 import com.namnv.project.kidpaint.R;
 
 /**
@@ -36,7 +35,7 @@ public class TextSpinnerAdapter implements SpinnerAdapter{
             View wrapper = view.findViewById(R.id.spinner_item_wrapper);
             StateListDrawable drawable = new StateListDrawable();
             drawable.addState(new int[]{android.R.attr.state_pressed}, context.getResources().getDrawable(R.color.action_button_pressed));
-            drawable.addState(new int[]{-android.R.attr.state_pressed}, new ColorDrawable(context.getResources().getColor(Application.getInstance().getThemeInfo().background)));
+            drawable.addState(new int[]{-android.R.attr.state_pressed}, new ColorDrawable(context.getResources().getColor(R.color.theme_default)));
             wrapper.setBackgroundDrawable(drawable);
 
             ImageView imageView = (ImageView)view.findViewById(R.id.spinner_item_image);

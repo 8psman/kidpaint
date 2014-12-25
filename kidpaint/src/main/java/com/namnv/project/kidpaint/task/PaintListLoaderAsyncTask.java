@@ -2,7 +2,6 @@ package com.namnv.project.kidpaint.task;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
 import com.namnv.project.kidpaint.Application;
 import com.namnv.project.kidpaint.adapter.GalleryGridAdapter;
@@ -50,7 +49,6 @@ public class PaintListLoaderAsyncTask extends AsyncTask<Void, Void, List<PaintRe
     @Override
     protected void onPostExecute(List<PaintReference> refs) {
         super.onPostExecute(refs);
-        Application.getInstance().putTempObject(Application.PAINT_REFERENCES, refs);
         if (adapter != null){
             adapter.clearPaint();
             for (PaintReference ref : refs)

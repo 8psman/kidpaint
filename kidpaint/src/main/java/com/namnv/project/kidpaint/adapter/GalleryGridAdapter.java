@@ -1,23 +1,18 @@
 package com.namnv.project.kidpaint.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.namnv.project.kidpaint.Application;
 import com.namnv.project.kidpaint.R;
 import com.namnv.project.kidpaint.object.PaintReference;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,29 +24,9 @@ public class GalleryGridAdapter extends ArrayAdapter<PaintReference>{
 
     LayoutInflater inflater;
 
-    DisplayImageOptions options;
-
     public GalleryGridAdapter(Context context, int resource) {
         super(context, resource);
 
-        options = new DisplayImageOptions.Builder()
-//                .showImageOnLoading(R.drawable.ic_stub) // resource or drawable
-//                .showImageForEmptyUri(R.drawable.ic_empty) // resource or drawable
-//                .showImageOnFail(R.drawable.ic_error) // resource or drawable
-                .resetViewBeforeLoading(true)  // default
-                .delayBeforeLoading(0)
-                .cacheInMemory(true) // default
-                .cacheOnDisk(false) // default
-//                .preProcessor(...)
-//        .postProcessor(...)
-//        .extraForDownloader(...)
-//        .considerExifParams(false) // default
-                .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2) // default
-                .bitmapConfig(Bitmap.Config.ARGB_8888) // default
-//                .decodingOptions(...)
-                .displayer(new SimpleBitmapDisplayer()) // default
-                .handler(new Handler()) // default
-                .build();
     }
 
     @Override
@@ -72,7 +47,7 @@ public class GalleryGridAdapter extends ArrayAdapter<PaintReference>{
         }
 
         holder.name.setText(paintRef.name);
-        ImageLoader.getInstance().displayImage(paintRef.path, holder.image, options);
+        ImageLoader.getInstance().displayImage(paintRef.path, holder.image, Application.getImageDisplayOptions());
         return  convertView;
     }
 

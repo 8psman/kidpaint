@@ -26,7 +26,7 @@ public class DialogFactory {
         View view = inflater.inflate(R.layout.dialog_loading, null);
         // custom view
         View container = view.findViewById(R.id.dialog_container);
-        container.setBackgroundResource(Application.getInstance().getThemeInfo().background);
+        container.setBackgroundResource(R.color.theme_default);
         TextView tvMessage = (TextView) view.findViewById(R.id.loading_message);
         if (message != null)
             tvMessage.setText(message);
@@ -44,7 +44,7 @@ public class DialogFactory {
         View view = inflater.inflate(R.layout.dialog_message, null);
         // custom view
         View container = view.findViewById(R.id.dialog_container);
-        container.setBackgroundResource(Application.getInstance().getThemeInfo().background);
+        container.setBackgroundResource(R.color.theme_default);
         TextView tvMessage = (TextView) view.findViewById(R.id.dialog_message);
         tvMessage.setText(message);
         Button ok = (Button) view.findViewById(R.id.dialog_ok);
@@ -73,7 +73,7 @@ public class DialogFactory {
         final EditText name = (EditText)view.findViewById(R.id.rename_new_name);
         Button ok = (Button) view.findViewById(R.id.rename_paint_ok);
         Button cancel = (Button) view.findViewById(R.id.rename_paint_cancel);
-        container.setBackgroundResource(Application.getInstance().getThemeInfo().background);
+        container.setBackgroundResource(R.color.theme_default);
 
         final AlertDialog alertDialog = new AlertDialog.Builder(context)
                 .setTitle(null)
@@ -120,7 +120,7 @@ public class DialogFactory {
         View view = inflater.inflate(R.layout.dialog_delete, null);
         // custom view
         View container = view.findViewById(R.id.dialog_rename_container);
-        container.setBackgroundResource(Application.getInstance().getThemeInfo().background);
+        container.setBackgroundResource(R.color.theme_default);
 
         Button ok = (Button) view.findViewById(R.id.delete_paint_ok);
         Button cancel = (Button) view.findViewById(R.id.delete_paint_cancel);
@@ -154,7 +154,7 @@ public class DialogFactory {
         View view = inflater.inflate(R.layout.dialog_saved, null);
         // custom view
         View container = view.findViewById(R.id.dialog_container);
-        container.setBackgroundResource(Application.getInstance().getThemeInfo().background);
+        container.setBackgroundResource(R.color.theme_default);
 
         Button home = (Button) view.findViewById(R.id.dialog_action_home);
         Button share = (Button) view.findViewById(R.id.dialog_action_share);
@@ -204,7 +204,7 @@ public class DialogFactory {
         View view = inflater.inflate(R.layout.dialog_cancel, null);
         // custom view
         View container = view.findViewById(R.id.dialog_container);
-        container.setBackgroundResource(Application.getInstance().getThemeInfo().background);
+        container.setBackgroundResource(R.color.theme_default);
 
         TextView message = (TextView) view.findViewById(R.id.dialog_message);
         Button cancel = (Button) view.findViewById(R.id.dialog_action_cancel);
@@ -252,7 +252,7 @@ public class DialogFactory {
         View view = inflater.inflate(R.layout.dialog_request, null);
         // custom view
         View container = view.findViewById(R.id.dialog_rename_container);
-        container.setBackgroundResource(Application.getInstance().getThemeInfo().background);
+        container.setBackgroundResource(R.color.theme_default);
 
         Button ok = (Button) view.findViewById(R.id.dialog_request_ok);
         Button cancel = (Button) view.findViewById(R.id.dialog_request_cancel);
@@ -289,7 +289,7 @@ public class DialogFactory {
         View view = inflater.inflate(R.layout.dialog_color_chooser, null);
         // custom view
         View container = view.findViewById(R.id.dialog_container);
-        container.setBackgroundResource(Application.getInstance().getThemeInfo().background);
+        container.setBackgroundResource(R.color.theme_default);
 
         final AlertDialog alertDialog = new AlertDialog.Builder(context)
                 .setTitle(null)

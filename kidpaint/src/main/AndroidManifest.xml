@@ -11,18 +11,14 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/KidPaint.Default" >
+
         <activity
-            android:name=".Splash"
-            android:label="@string/app_name">
+            android:name=".Gallery">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".Gallery"
-            android:label="@string/title_activity_gallery" >
         </activity>
 
         <activity
@@ -46,13 +42,6 @@
         </activity>
 
         <activity
-            android:name=".MultiTouch"
-            android:label="@string/title_activity_paint"
-            android:parentActivityName=".Gallery"
-            android:theme="@style/KidPaint.Paint" >
-        </activity>
-
-        <activity
             android:name=".New"
             android:excludeFromRecents="true"
             android:label="@string/title_activity_new"
@@ -63,14 +52,6 @@
                 android:value="com.namnv.project.kidpaint.Gallery" />
         </activity>
 
-        <activity
-            android:name=".Settings"
-            android:label="@string/title_activity_settings"
-            android:parentActivityName=".Gallery" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.namnv.project.kidpaint.Gallery" />
-        </activity>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="android:actionBarStyle">@style/KidPaint.ActionBar.Default</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@color/theme_1</item>
+        <item name="android:windowBackground">@color/theme_default</item>
         <item name="android:windowDisablePreview">true</item>
     </style>
 

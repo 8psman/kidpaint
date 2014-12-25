@@ -23,10 +23,6 @@ public abstract class PaintTool{
         paint.setColor(Color.BLACK);
         paint.setStrokeWidth(5f);
 
-//        paint.setAntiAlias(false);
-//        paint.setDither(true);
-//        paint.setFilterBitmap(false);
-
         paint.setAntiAlias(true);
         paint.setStrokeWidth(50);
         paint.setStyle(Paint.Style.STROKE);

@@ -4,7 +4,7 @@
     <style name="KidPaint.Default" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="actionBarStyle">@style/KidPaint.ActionBar.Default</item>
-        <item name="android:windowBackground">@color/theme_1</item>
+        <item name="android:windowBackground">@color/theme_default</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowDisablePreview">true</item>
     </style>
@@ -23,6 +23,8 @@
     <style name="KidPaint.ActionBar.Default" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:actionButtonStyle">@style/KidPaint.ActionBar.Default.ActionButton</item>
         <item name="actionButtonStyle">@style/KidPaint.ActionBar.Default.ActionButton</item>
+        <item name="android:background">@color/theme_default</item>
+        <item name="background">@color/theme_default</item>
     </style>
 
     <style name="KidPaint.ActionBar.Default.ActionButton" parent="@style/Widget.AppCompat.Light.ActionButton">

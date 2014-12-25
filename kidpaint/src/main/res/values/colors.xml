@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-    <color name="theme_main_color">#FF0066</color>
-    -->
+
     <color name="transparent">#00000000</color>
 
-    <color name="theme_main_color">#100058</color>
+    <color name="theme_main_color">#00555B</color>
     <color name="theme_text_color">#FFFFFF</color>
 
     <color name="grid_selector_disabled">#999999</color>
@@ -18,7 +16,7 @@
     <color name="menu_item_background_pressed">#AAFFFFFF</color>
     <color name="menu_item_background_normal">#11FFFFFF</color>
 
-    <color name="theme_default">#100058</color>
+    <color name="theme_default">#00555B</color>
     <color name="theme_1">#100058</color>
     <color name="theme_2">#1A5F00</color>
     <color name="theme_3">#580000</color>
