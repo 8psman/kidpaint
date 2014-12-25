@@ -1,0 +1,40 @@
+<resources>
+
+
+    <style name="KidPaint.Dialog" parent="Theme.AppCompat.Light.DialogWhenLarge">
+        <item name="android:excludeFromRecents">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="KidPaint.Blue" parent="KidPaint.Default">
+        <item name="android:windowBackground">@color/theme_1</item>
+        <item name="actionBarStyle">@style/KidPaint.ActionBar.Blue</item>
+    </style>
+
+    <style name="KidPaint.Green" parent="KidPaint.Default">
+        <item name="android:windowBackground">@color/theme_2</item>
+        <item name="actionBarStyle">@style/KidPaint.ActionBar.Green</item>
+    </style>
+
+    <style name="KidPaint.Red" parent="KidPaint.Default">
+        <item name="android:windowBackground">@color/theme_3</item>
+        <item name="actionBarStyle">@style/KidPaint.ActionBar.Red</item>
+    </style>
+
+    <style name="KidPaint.Aqua" parent="KidPaint.Default">
+        <item name="android:windowBackground">@color/theme_4</item>
+        <item name="actionBarStyle">@style/KidPaint.ActionBar.Aqua</item>
+    </style>
+
+    <style name="KidPaint.Magenta" parent="KidPaint.Default">
+        <item name="android:windowBackground">@color/theme_5</item>
+        <item name="actionBarStyle">@style/KidPaint.ActionBar.Magenta</item>
+    </style>
+
+    <style name="KidPaint.Yellow" parent="KidPaint.Default">
+        <item name="android:windowBackground">@color/theme_6</item>
+        <item name="actionBarStyle">@style/KidPaint.ActionBar.Yellow</item>
+    </style>
+
+</resources>

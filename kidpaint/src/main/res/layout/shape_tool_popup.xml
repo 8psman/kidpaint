@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:gravity="center"
+    android:background="@color/theme_4">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/shape_tool_two"
+            android:onClick="onShapeToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tool_shape_two"
+            android:padding="5dp"
+            android:background="@drawable/action_button_background"/>
+
+        <ImageButton
+            android:id="@+id/shape_tool_three"
+            android:onClick="onShapeToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tool_shape_three"
+            android:padding="5dp"
+            android:background="@drawable/action_button_background"/>
+
+        <ImageButton
+            android:id="@+id/shape_tool_four"
+            android:onClick="onShapeToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tool_shape_four"
+            android:padding="5dp"
+            android:background="@drawable/action_button_background"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/shape_tool_five"
+            android:onClick="onShapeToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tool_shape_five"
+            android:padding="5dp"
+            android:background="@drawable/action_button_background"/>
+
+        <ImageButton
+            android:id="@+id/shape_tool_six"
+            android:onClick="onShapeToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tool_shape_six"
+            android:padding="5dp"
+            android:background="@drawable/action_button_background"/>
+
+        <ImageButton
+            android:id="@+id/shape_tool_zero"
+            android:onClick="onShapeToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tool_shape_zero"
+            android:padding="5dp"
+            android:background="@drawable/action_button_background"/>
+    </LinearLayout>
+
+</LinearLayout>

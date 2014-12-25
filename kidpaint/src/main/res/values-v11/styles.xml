@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="KidPaint.Default" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/KidPaint.ActionBar.Default</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/theme_1</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="KidPaint.Paint" parent="KidPaint.Default">
+        <item name="background">@android:color/white</item>
+    </style>
+
+</resources>

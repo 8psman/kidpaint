@@ -1,0 +1,234 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/dialog_new_container"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.namnv.project.kidpaint.New">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/paint_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/theme_text_color"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/menu_item_indicator">
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:gravity="center_vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/paint_name"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/theme_text_color"/>
+
+            <EditText
+                android:id="@+id/new_paint_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_text_color"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/paint_size"
+                android:textColor="@color/theme_text_color"/>
+
+            <Spinner
+                android:id="@+id/new_paint_size"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:entries="@array/paint_size_preset"
+                android:textColor="@color/theme_text_color"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/new_paint_custom"
+            android:gravity="center_vertical"
+            android:visibility="visible"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_text_color"/>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/paint_width"
+                        android:textColor="@color/theme_text_color"/>
+
+                    <EditText
+                        android:id="@+id/new_paint_width"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:inputType="number"
+                        android:textColor="@color/theme_text_color"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pixel"
+                        android:textColor="@color/theme_text_color"/>
+
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/paint_height"
+                        android:textColor="@color/theme_text_color"/>
+
+                    <EditText
+                        android:id="@+id/new_paint_height"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:inputType="number"
+                        android:textColor="@color/theme_text_color"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pixel"
+                        android:textColor="@color/theme_text_color"/>
+                </TableRow>
+
+            </TableLayout>
+
+        </TableRow>
+
+        <!--<TableRow-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingTop="10dp">-->
+
+            <!--<TextView-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/paint_background"-->
+                <!--android:textColor="@color/theme_text_color"/>-->
+
+            <!--<Spinner-->
+                <!--android:id="@+id/new_paint_background"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center"-->
+                <!--android:entries="@array/paint_size_preset"-->
+                <!--android:textColor="@color/theme_text_color"/>-->
+
+        <!--</TableRow>-->
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/new_paint_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/theme_text_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/new_paint_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:text="@string/action_cancel"
+            android:textColor="@color/theme_text_color"
+            style="@style/KidPaint.ActionBar.Default.ActionButton"/>
+
+        <Button
+            android:id="@+id/new_paint_ok"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:text="@string/action_ok"
+            android:textColor="@color/theme_text_color"
+            style="@style/KidPaint.ActionBar.Default.ActionButton"/>
+
+    </LinearLayout>
+
+</LinearLayout>

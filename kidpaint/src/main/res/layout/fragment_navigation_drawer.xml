@@ -1,0 +1,265 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:padding="5dp"
+    tools:context="com.namnv.project.kidpaint.NavigationDrawerFragment" >
+
+    <LinearLayout
+        android:id="@+id/menu_section_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/menu_item_background"
+        android:clickable="true"
+        android:onClick="onLoginFacebook"
+        android:gravity="center_vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_facebook64"
+            android:text="@string/login"
+            android:clickable="false"
+            android:textColor="@color/theme_text_color"
+            android:background="@color/transparent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_section_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:background="@color/menu_item_background_normal"
+        android:orientation="horizontal">
+
+        <!--<ImageView-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@color/theme_text_color"/>-->
+
+        <com.facebook.widget.ProfilePictureView
+            android:id="@+id/facebookAvatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+        </com.facebook.widget.ProfilePictureView>
+
+        <TextView
+            android:id="@+id/facebookUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/theme_text_color"
+            android:textSize="18sp"
+            android:text="@string/hello_world"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/menu_item_background_normal">
+
+        <Spinner
+            android:id="@+id/spinner_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/theme_text_color"
+            android:textColor="@color/theme_main_color"
+            android:text="@string/menu_option_theme"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:onClick="onChangeTheme"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_1"
+                android:tag="@string/theme_1"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/theme_1"/>
+
+            <Button
+                android:onClick="onChangeTheme"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_2"
+                android:tag="@string/theme_2"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/theme_2"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:onClick="onChangeTheme"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/theme_3"
+                android:tag="@string/theme_3"
+                android:background="@color/theme_3"/>
+
+            <Button
+                android:onClick="onChangeTheme"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_4"
+                android:tag="@string/theme_4"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/theme_4"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:onClick="onChangeTheme"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_5"
+                android:tag="@string/theme_5"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/theme_5"/>
+
+            <Button
+                android:onClick="onChangeTheme"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_6"
+                android:tag="@string/theme_6"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/theme_6"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<include layout="@layout/menu_item_indicator"/>-->
+
+    <LinearLayout
+        android:id="@+id/menu_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/menu_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:background="@drawable/menu_item_background"
+            android:gravity="center"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_setting"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_text_color"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:text="@string/menu_option_setting"/>
+
+        </LinearLayout>
+
+        <!--<include layout="@layout/menu_item_indicator"/>-->
+
+        <LinearLayout
+            android:id="@+id/menu_section_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:onClick="onLogoutFacebook"
+            android:background="@drawable/menu_item_background"
+            android:gravity="center"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_logout"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_text_color"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:text="@string/menu_option_logout"/>
+
+        </LinearLayout>
+
+        <!--<include layout="@layout/menu_item_indicator"/>-->
+
+    </LinearLayout>
+</LinearLayout>

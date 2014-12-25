@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <color name="theme_main_color">#FF0066</color>
+    -->
+    <color name="transparent">#00000000</color>
+
+    <color name="theme_main_color">#100058</color>
+    <color name="theme_text_color">#FFFFFF</color>
+
+    <color name="grid_selector_disabled">#999999</color>
+    <color name="grid_selector_background">#FFFFFF</color>
+    <color name="grid_selector_focused">#FFFFFF</color>
+
+    <color name="grid_item_border">#FFFFFF</color>
+    <color name="grid_item_name">#FFFFFF</color>
+
+    <color name="menu_item_background_pressed">#AAFFFFFF</color>
+    <color name="menu_item_background_normal">#11FFFFFF</color>
+
+    <color name="theme_default">#100058</color>
+    <color name="theme_1">#100058</color>
+    <color name="theme_2">#1A5F00</color>
+    <color name="theme_3">#580000</color>
+    <color name="theme_4">#00555B</color>
+    <color name="theme_5">#52005B</color>
+    <color name="theme_6">#525200</color>
+
+
+    <color name="action_button_pressed">#44FFFFFF</color>
+    <color name="action_button_selected">#66FFFFFF</color>
+
+    <color name="df_draw_color_1">#0000FF</color>
+    <color name="df_draw_color_2">#00FF00</color>
+    <color name="df_draw_color_3">#FF0000</color>
+    <color name="df_draw_color_4">#00FFFF</color>
+    <color name="df_draw_color_5">#FF00FF</color>
+    <color name="df_draw_color_6">#FFFF00</color>
+    <color name="df_draw_color_7">#000000</color>
+    <color name="df_draw_color_8">#FFFFFF</color>
+
+    <array name="df_draw_color" >
+        <item>#000000</item>
+        <item>#FFFFFF</item>
+        <item>#0000FF</item>
+        <item>#00FF00</item>
+        <item>#FF0000</item>
+        <item>#00FFFF</item>
+        <item>#FF00FF</item>
+        <item>#FFFF00</item>
+        <item>#696969</item>
+        <item>#DAA520</item>
+        <item>#FF69B4</item>
+        <item>#AFEEEE</item>
+        <item>#8B4513</item>
+    </array>
+
+    <color name="df_background_color_1">#0000FF</color>
+    <color name="df_background_color_2">#00FF00</color>
+    <color name="df_background_color_3">#FF0000</color>
+    <color name="df_background_color_4">#00FFFF</color>
+    <color name="df_background_color_5">#FF00FF</color>
+    <color name="df_background_color_6">#FFFF00</color>
+    <color name="df_background_color_7">#000000</color>
+    <color name="df_background_color_8">#FFFFFF</color>
+
+</resources>

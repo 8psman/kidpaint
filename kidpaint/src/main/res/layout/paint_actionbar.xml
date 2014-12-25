@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <Button
+        android:id="@+id/tool_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Light.ActionButton"
+        android:drawableLeft="@android:drawable/ic_menu_revert"/>
+
+    <Button
+        android:id="@+id/tool_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Light.ActionButton"
+        android:drawableLeft="@android:drawable/ic_menu_save"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style=""/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tool_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!--<Spinner-->
+            <!--android:id="@+id/spinner_color"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/action_button_background"/>-->
+
+        <!--<Spinner-->
+            <!--android:id="@+id/spinner_color"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/action_button_background"/>-->
+
+        <Button
+            android:id="@+id/color_chooser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Light.ActionButton"
+            android:drawableLeft="@drawable/tool_color_picker"/>
+
+        <Spinner
+            android:id="@+id/spinner_thickness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button_background"/>
+
+        <Spinner
+            android:id="@+id/spinner_eraser_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button_background"/>
+
+        <Spinner
+            android:id="@+id/spinner_pencil_opacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button_background"/>
+
+        <Button
+            android:id="@+id/tool_crop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Light.ActionButton"
+            android:drawableLeft="@android:drawable/ic_menu_crop"/>
+
+        <Button
+            android:id="@+id/tool_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Light.ActionButton"
+            android:drawableLeft="@drawable/tool_clear"/>
+
+    </LinearLayout>
+
+</LinearLayout>

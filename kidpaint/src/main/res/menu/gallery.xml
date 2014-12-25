@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.namnv.project.kidpaint.Gallery" >
+
+    <item android:id="@+id/action_new_paint"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/action_new_paint"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_new_paint_from_image"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="@string/new_from_image"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/search"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
+</menu>

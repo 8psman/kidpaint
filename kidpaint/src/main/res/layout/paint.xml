@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.namnv.project.kidpaint.Paint">
+
+    <com.namnv.project.kidpaint.ui.Painter
+        android:id="@+id/painter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/horizontal_line_shadow_up">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/tool_hand"
+            android:onClick="onToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/KidPaint.ActionBar.Default.ActionButton"
+            android:drawableLeft="@drawable/ic_tool_hand"/>
+
+        <Button
+            android:id="@+id/tool_pencil"
+            android:onClick="onToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/KidPaint.ActionBar.Default.ActionButton"
+            android:drawableLeft="@android:drawable/ic_menu_edit"/>
+
+        <Button
+            android:id="@+id/tool_bucket"
+            android:onClick="onToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/KidPaint.ActionBar.Default.ActionButton"
+            android:drawableLeft="@drawable/ic_tool_bucket"/>
+
+        <ImageButton
+            android:id="@+id/tool_shape"
+            android:onClick="onToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/KidPaint.ActionBar.Default.ActionButton"
+            android:src="@drawable/ic_tool_bucket"/>
+
+        <Button
+            android:id="@+id/tool_eraser"
+            android:onClick="onToolSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/KidPaint.ActionBar.Default.ActionButton"
+            android:drawableLeft="@drawable/ic_tool_eraser"/>
+
+    </LinearLayout>
+
+</LinearLayout>

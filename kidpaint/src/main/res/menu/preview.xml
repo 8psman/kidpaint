@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.namnv.project.kidpaint.Preview" >
+
+    <item
+        android:id="@+id/action_share_paint"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="@string/action_edit_paint"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_edit_paint"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="@string/action_edit_paint"
+        app:showAsAction="always"/>
+
+    <item
+    android:id="@+id/action_rename_paint"
+    android:icon="@android:drawable/ic_menu_edit"
+    android:title="@string/action_rename_paint"
+    app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_delete_paint"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/action_delete_paint"
+        app:showAsAction="ifRoom"/>
+
+</menu>
