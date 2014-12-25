@@ -1,2 +1,2 @@
-include ':kidpaint', ':facebook'
+include ':kidpaint'
 include ':ambilWarna'

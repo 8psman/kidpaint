@@ -52,13 +52,6 @@
             <!--android:layout_margin="10dp"-->
             <!--android:background="@color/theme_text_color"/>-->
 
-        <com.facebook.widget.ProfilePictureView
-            android:id="@+id/facebookAvatar"
-            android:layout_width="60dp"
-            android:layout_height="60dp">
-
-        </com.facebook.widget.ProfilePictureView>
-
         <TextView
             android:id="@+id/facebookUsername"
             android:layout_width="wrap_content"

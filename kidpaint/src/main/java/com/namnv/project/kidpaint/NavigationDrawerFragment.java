@@ -25,9 +25,6 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import com.facebook.model.GraphUser;
-import com.facebook.widget.ProfilePictureView;
-
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
@@ -118,7 +115,6 @@ public class NavigationDrawerFragment extends Fragment {
     View infoSecion;
     View logoutSection;
     TextView profileName;
-    ProfilePictureView profilePicture;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -132,7 +128,6 @@ public class NavigationDrawerFragment extends Fragment {
         infoSecion.setVisibility(View.GONE);
         logoutSection.setVisibility(View.GONE);
 
-        profilePicture = (ProfilePictureView) view.findViewById(R.id.facebookAvatar);
         profileName = (TextView) view.findViewById(R.id.facebookUsername);
 
         View setting = view.findViewById(R.id.menu_setting);
@@ -191,20 +186,6 @@ public class NavigationDrawerFragment extends Fragment {
             }
 
         return view;
-    }
-
-    public void onUserLogin(GraphUser user){
-        loginSection.setVisibility(View.GONE);
-        infoSecion.setVisibility(View.VISIBLE);
-        logoutSection.setVisibility(View.VISIBLE);
-        profilePicture.setProfileId(user.getId());
-        profileName.setText(user.getName());
-    }
-
-    public void onUserLogout(){
-        loginSection.setVisibility(View.VISIBLE);
-        infoSecion.setVisibility(View.GONE);
-        logoutSection.setVisibility(View.GONE);
     }
 
     public boolean isDrawerOpen() {

@@ -17,7 +17,6 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,19 +25,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.facebook.FacebookOperationCanceledException;
-import com.facebook.Request;
-import com.facebook.Response;
-import com.facebook.Session;
-import com.facebook.SessionState;
-import com.facebook.UiLifecycleHelper;
-import com.facebook.model.GraphUser;
 import com.namnv.project.kidpaint.adapter.GalleryGridAdapter;
 import com.namnv.project.kidpaint.object.PaintHolder;
 import com.namnv.project.kidpaint.object.PaintReference;
 import com.namnv.project.kidpaint.task.ImageLoaderAsyncTask;
 import com.namnv.project.kidpaint.task.PaintListLoaderAsyncTask;
-import com.namnv.project.kidpaint.ui.DialogFactory;
 import com.namnv.project.kidpaint.ui.Painter;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -67,8 +58,6 @@ public class Gallery extends ActionBarActivity
     private CharSequence mTitle;
     GalleryGridAdapter adapter;
 
-    boolean isUserClickLogin = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,15 +83,6 @@ public class Gallery extends ActionBarActivity
         galleryGridView.setOnItemClickListener(this);
 
         Application.getInstance().putTempObject(KEY_NEED_UPDATE_CONTENT, false);
-
-        /**
-         * facebook area
-         */
-
-        uiHelper = new UiLifecycleHelper(this, callback);
-        uiHelper.onCreate(savedInstanceState);
-
-//        checkFacebookLoginState();
 
     }
 
@@ -222,8 +202,6 @@ public class Gallery extends ActionBarActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
-        uiHelper.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK){
             switch (requestCode){
@@ -302,42 +280,6 @@ public class Gallery extends ActionBarActivity
         }
     }
 
-    public void checkFacebookLoginState(){
-        Session session = Session.getActiveSession();
-        if (session != null && session.isOpened()) {
-            // Get the user's data
-            makeMeRequest(session);
-        }
-    }
-
-    public void onLoginFacebook(View view){
-        isUserClickLogin = true;
-        mNavigationDrawerFragment.closeDrawer();
-        Session.openActiveSession(this, true, callback);
-    }
-
-    public void onLogoutFacebook(View view){
-        mNavigationDrawerFragment.closeDrawer();
-        AlertDialog alertDialog = DialogFactory.createRequestDialog(this, "Logout", "You want to logout your facebook account?",
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        Session session = Session.getActiveSession();
-                        if (session != null) {
-                            if (!session.isClosed()) {
-                                session.closeAndClearTokenInformation();
-                            }
-                        } else {
-                            session = new Session(Gallery.this);
-                            Session.setActiveSession(session);
-                            session.closeAndClearTokenInformation();
-                        }
-                        mNavigationDrawerFragment.onUserLogout();
-                    }
-                });
-        alertDialog.show();
-    }
-
     public void onChangeTheme(View view){
         int theme = Application.getInstance().getThemeResourceFromName((String)view.getTag());
         if (theme != Application.getInstance().getAppTheme()){
@@ -359,76 +301,12 @@ public class Gallery extends ActionBarActivity
         startActivity(new Intent(this, Gallery.class));
     }
 
-
-    /**
-     * start of facebook section--------------------------------------------------------------------
-     */
-    private UiLifecycleHelper uiHelper;
-
-    private Session.StatusCallback callback = new Session.StatusCallback() {
-        @Override
-        public void call(final Session session, final SessionState state, final Exception exception) {
-            onSessionStateChange(session, state, exception);
-        }
-    };
-
-    private void makeMeRequest(final Session session) {
-        // Make an API call to get user data and define a
-        // new callback to handle the response.
-        Request request = Request.newMeRequest(session,
-                new Request.GraphUserCallback() {
-                    @Override
-                    public void onCompleted(GraphUser user, Response response) {
-                        // If the response is successful
-                        if (session == Session.getActiveSession()) {
-                            if (user != null) {
-                                // Set the id for the ProfilePictureView
-                                // view that in turn displays the profile picture.
-                                mNavigationDrawerFragment.onUserLogin(user);
-                                if (isUserClickLogin){
-                                    mNavigationDrawerFragment.showDrawer();
-                                    DialogFactory.createMessageDialog(Gallery.this,
-                                            "You've just logged in your facebook account! Have fun!")
-                                            .show();
-                                    isUserClickLogin = false;
-                                }
-                            }
-                        }
-                        if (response.getError() != null) {
-                            // Handle errors, will do so later.
-                            Log.d(Application.TAG, "Error on GraphicUserCallback");
-                        }
-                    }
-                });
-        request.executeAsync();
-    }
-
-    private void onSessionStateChange(final Session session, SessionState state, Exception exception) {
-        if (session != null && session.isOpened()) {
-            // Get the user's data.
-            makeMeRequest(session);
-        }
-        if (session == null || (state == SessionState.CLOSED_LOGIN_FAILED)){
-            if (exception != null && exception instanceof FacebookOperationCanceledException){
-                DialogFactory.createMessageDialog(this, "Cannot login to facebook account!").show();
-            }
-        }
-
-    }
-
-    /**
-     * end of facebook section----------------------------------------------------------------------
-     */
-
-
     /**
      * activity lifecycle
      */
     @Override
     protected void onResume() {
         super.onResume();
-        uiHelper.onResume();
-
         // check update content
         boolean needUpdateContent = (Boolean) Application.getInstance().getTempObject(KEY_NEED_UPDATE_CONTENT);
         if (needUpdateContent){
@@ -442,18 +320,15 @@ public class Gallery extends ActionBarActivity
     @Override
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        uiHelper.onSaveInstanceState(bundle);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        uiHelper.onPause();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        uiHelper.onDestroy();
     }
 }

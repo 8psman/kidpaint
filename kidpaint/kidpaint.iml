@@ -82,11 +82,8 @@
     <orderEntry type="library" exported="" name="appcompat-v7-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
-    <orderEntry type="library" exported="" name="bolts-android-1.1.2" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-1.9.3" level="project" />
-    <orderEntry type="library" exported="" name="library-1.0.7" level="project" />
     <orderEntry type="module" module-name="ambilWarna" exported="" />
-    <orderEntry type="module" module-name="facebook" exported="" />
   </component>
 </module>
 

@@ -20,8 +20,6 @@ import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.facebook.UiLifecycleHelper;
-import com.facebook.widget.FacebookDialog;
 import com.namnv.project.kidpaint.adapter.ImageSpinnerAdapter;
 import com.namnv.project.kidpaint.adapter.TextSpinnerAdapter;
 import com.namnv.project.kidpaint.object.BucketTool;
@@ -63,9 +61,6 @@ public class Paint extends ActionBarActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        uiHelper = new UiLifecycleHelper(this, null);
-        uiHelper.onCreate(savedInstanceState);
 
         setTheme(Application.getInstance().getAppTheme());
         setContentView(R.layout.paint);
@@ -362,33 +357,9 @@ public class Paint extends ActionBarActivity implements View.OnClickListener{
         }
     }
 
-    private UiLifecycleHelper uiHelper;
-    public void onSharePaint(Bitmap bitmap){
-        if (FacebookDialog.canPresentShareDialog(this, FacebookDialog.ShareDialogFeature.PHOTOS)){
-            FacebookDialog shareDialog = new FacebookDialog.PhotoShareDialogBuilder(Paint.this)
-                    .addPhotos(Arrays.asList(bitmap))
-                    .build();
-            uiHelper.trackPendingDialogCall(shareDialog.present());
-        }else{
-            DialogFactory.createMessageDialog(this, "Please install or update facebook application!").show();
-        }
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
-            @Override
-            public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
-                Log.e("Activity", String.format("Error: %s", error.toString()));
-            }
-
-            @Override
-            public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
-                Log.i("Activity", "Success!");
-            }
-        });
 
         if (resultCode == RESULT_OK){
             switch (requestCode){
@@ -404,27 +375,28 @@ public class Paint extends ActionBarActivity implements View.OnClickListener{
         }
     }
 
+    public void onSharePaint(Bitmap paint){
+
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        uiHelper.onResume();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        uiHelper.onSaveInstanceState(outState);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        uiHelper.onPause();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        uiHelper.onDestroy();
+
     }
 }
